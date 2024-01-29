@@ -1,14 +1,17 @@
 
 from aiogram import Bot, Dispatcher, executor, types
+from dotenv import load_dotenv
+import os
 
 
-# Adding token
-bot = Bot("6789289219:AAFwyqu5yEhghRAXMO-WffI0K5FHPXcn4vQ")
+# We download the token from the .env file
+load_dotenv()
+bot = Bot(os.getenv('TOKEN'))
 
 # add dispatcher
 dp = Dispatcher(bot=bot)
 
-# Create a decorator and pass the start command
+# Create a decorator and pass the start comman
 @dp.message_handler(commands=["start"])
 
 # Adding an asynchronous function
